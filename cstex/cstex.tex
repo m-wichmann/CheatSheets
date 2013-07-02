@@ -1,0 +1,126 @@
+\documentclass[10pt,a4paper,landscape,DIV=calc,english]{scrartcl}
+
+\usepackage[pdftex,
+            landscape,
+            top=1cm, bottom=1cm, left=1cm, right=1cm
+           ]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{lmodern}
+
+\usepackage[pdftex,
+            bookmarks, bookmarksopen, bookmarksopenlevel=1, bookmarksnumbered=true,
+            pdfpagemode={UseNone},
+            pdfpagelayout={SinglePage},
+            plainpages=false,
+            pdfkeywords={},
+            pdfsubject={},
+            pdftitle={},
+            pdfauthor={}
+           ]{hyperref}
+
+\usepackage{tabu}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\pagestyle{empty}
+\hyphenation{}
+
+%\definecolor{blue_light}{rgb}{0.6, 0.9, 0.95}
+%\definecolor{blue_dark}{rgb}{0.2, 0.4, 0.5}
+
+\definecolor{cs_table_1}{rgb}{0.6, 0.8, 0.7}
+\definecolor{cs_table_2}{rgb}{1.0, 1.0, 1.0}
+\definecolor{cs_header}{rgb}{0.1, 0.3, 0.3}
+\definecolor{cs_header_font}{rgb}{1.0, 1.0, 1.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cheat sheet stuff
+
+% Useage:
+%   \begin{cschapter}[0.1]{Arithmetic}
+%       \csitemhead{\textbf{Built-in Exceptions}}
+%       \csitem{BaseException}{Exception}
+%   \end{cschapter}
+
+
+\newenvironment {cschapter}[2][0.5]
+                {
+                    \taburowcolors[]2{cs_table_1 .. cs_table_2}
+                    \begin{tabu}{ X[#1, l] X[1 - #1, l] }
+
+                    \multicolumn{2}{c}{
+                        \rule{0pt}{0.45cm}
+                        \cellcolor{cs_header}
+                        \textcolor{cs_header_font}{\textbf{#2}}
+                    }
+                    \\[0.1cm]
+                }
+                {
+                    \end{tabu}
+                    \vspace{0.4cm}
+                }
+
+\newcommand{\csitem}[2]{{#1} & {#2}\\}
+
+% TODO: auto adjust columnwidth
+\newcommand{\csitemhead}[1]{\multicolumn{2}{p{0.9525\linewidth}}{#1}\\}
+
+\newcommand{\cstitle}[1]{
+                            \begin{center}
+                            \Large{\textbf{#1}}\\
+                            \end{center}
+                        }
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+% /Cheat sheet stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

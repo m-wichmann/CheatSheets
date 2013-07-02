@@ -1,0 +1,266 @@
+\input{../cstex/cstex.tex}
+
+
+\begin{document}
+\raggedright
+\begin{multicols}{3}
+
+    \cstitle{Python Cheat Sheet}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Source File Basic}
+        \csitemhead{\code{\#!/usr/bin/env python3}}
+        \csitemhead{\code{\# -*- coding: utf-8 -*-}}
+        \csitemhead{\code{if \_\_name\_\_ == "\_\_main\_\_":}}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Definitions}
+        \csitem{\code{class Clazz(object):}}{New Class inherting from 'object'.}
+        \csitem{\code{def method(self):}}{New instance method.}
+        \csitem{\code{def method(cls):}}{New class method.}
+        \csitem{\code{def function():}}{New function.}
+        \csitem{\code{def f(i=42):}}{Default value for named argument.}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Class Special Methods}
+        \csitem{\code{\_\_init\_\_(self,args)}}{Constructor}
+        \csitem{\code{\_\_del\_\_(self)}}{Destructor}
+        \csitem{\code{\_\_repr\_\_(self)}}{Offical string representation}
+        \csitem{\code{\_\_str\_\_(self)}}{Nice string representation}
+        \csitem{\code{\_\_cmp\_\_(self,other)}}{Compare 'self' to 'other'}
+        \csitem{\code{\_\_index\_\_(self)}}{Index}
+        \csitem{\code{\_\_hash\_\_(self)}}{Hash}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Slicing / List / Tuple}
+        \csitemhead{\code{a = [0,1,2,3,4,5], b = "hello", c = (1,2,3)}}
+        \csitem{\code{a[3] --> 3}}{Indexing.}
+        \csitem{\code{a[-2] --> 4}}{Backwards indexing.}
+        \csitem{\code{a[1:] --> [1,2,3,4,5]}}{Slice from 1 to end.}
+        \csitem{\code{a[:5] --> [0,1,2,3,4]}}{Slice from Begin to 5.}
+        \csitem{\code{a[:-2] --> [0,1,2,3]}}{Slice to second last.}
+        \csitem{\code{a[1:3] --> [1,2]}}{Slice from 1 to 3.}
+        \csitem{\code{a[1:-1] --> [1,2,3,4]}}{Slice from 1 to last.}
+        \csitem{\code{a[::2] --> [0,2,4]}}{Slice with step 2.}
+        \csitem{\code{a[::-2] --> [5,3,1]}}{Backwards slice with step.}
+        \csitem{\code{a[b=a[:]]}}{Shallow copy of a}
+        \csitem{\code{4 in a --> True}}{Check for item in list.}
+        \csitemhead{\textbf{Same methods for lists, strings, tuples}}
+        \csitem{\code{"hell" in b --> True}}{Substring in string.}
+        \csitem{\code{c[1:3] --> (2,3)}}{Slicing of tuples.}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Dictionary}
+        \csitemhead{\code{a = \{"a": 42, 3: "y"\}}}
+        \csitem{\code{a["a"] --> 42}}{}
+        \csitem{\code{a[3] = "z"}}{}
+        \csitem{\code{a[3] --> "z"}}{}
+        \csitem{\code{a.keys() --> ["a", 3]}}{}
+        \csitem{\code{a.values() --> [42,"z"]}}{}
+        \csitem{\code{del a[3]}}{}
+        \csitem{\code{a --> \{"a": 42\}}}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Control flow}
+        \csitem{Conditional}{Loop (for)}
+        \csitem{\code{if x < 0:}}{\code{for i in range(12):}}
+        \csitem{\code{{\space\space\space\space}print("-")}}{\code{{\space\space\space\space}print(i)}}
+        \csitem{\code{elif x == 0:}}{\code{for c in "string":}}
+        \csitem{\code{{\space\space\space\space}print("0")}}{\code{{\space\space\space\space}print(c)}}
+        \csitem{\code{else:}}{\code{while True:}}
+        \csitem{\code{{\space\space\space\space}print("+")}}{\code{{\space\space\space\space}pass \# do nothing}}
+        \csitemhead{Boolean Condition: and, or, not, is, in}
+        \csitem{break}{Jump out of loop.}
+        \csitem{continue}{Jump back to top of loop.}
+        \csitem{range(start[,end[,step]])}{Get new list e.g. for loop.}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{multicols}{2}
+        \begin{cschapter}[0.1]{Arithmetic}
+            \csitem{+}{Addition}
+            \csitem{-}{Subtraction}
+            \csitem{*}{Multiplication}
+            \csitem{/}{Division}
+            \csitem{//}{Floored qoutient}
+            \csitem{\%}{Remainder}
+            \csitem{-x}{Negated}
+            \csitem{**}{Power}
+        \end{cschapter}
+        \begin{cschapter}[0.1]{Bit logic}
+            \csitem{|}{or}
+            \csitem{\^{}}{xor}
+            \csitem{\&}{and}
+            \csitem{{<}{<}}{left shift}
+            \csitem{{>}{>}}{right shift}
+            \csitem{\~{}}{invert}
+        \end{cschapter}
+    \end{multicols}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Exceptions}
+        \csitem{\code{try:}}{Start protecting area.}
+        \csitem{\code{{\space\space\space\space}fd = open(f, 'r')}}{Raise a new Exception.}
+        \csitem{\code{except Exception:}}{Catch IOError.}
+        \csitem{\code{{\space\space\space\space}print("error")}}{Exception handling.}
+        \csitem{\code{else:}}{If no Exception raised...}
+        \csitem{\code{{\space\space\space\space}fd.close()}}{...do something.}
+        \csitemhead{\textbf{Built-in Exceptions:} BaseException, Exception, IndexError, KeyError, KeyboardInterrupt, OSError}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Codestyle (PEP8)}
+        \csitem{Indentation}{4 Spaces}
+        \csitem{Maximum Line Length}{79 Characters}
+        \csitem{Encoding}{UTF-8}
+        \csitem{Doctstring}{"""Some docstring"""}
+        \csitemhead{\textbf{Visibility Modifier}}
+        \csitem{'protected'}{\code{\_* --> \_some\_name}}
+        \csitem{'private'}{\code{\_\_* --> \_\_some\_name}}
+        \csitemhead{\textbf{Naming Conventions}}
+        \csitem{Package/Module}{Lowercase}
+        \csitem{Class}{First letter uppercase, CamelCase}
+        \csitem{Vars, Functions, Methods}{Lowercase, seperate by underscore}
+        \csitem{Constants}{All uppercase}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{String Methods}
+        \csitem{\code{find(sub[,start[,end]])}}{Lowest index of substring 'sub' in slice s[start,end].}
+        \csitem{\code{join(iterable)}}{Concatenate items in iterable with seperater 's'.}
+        \csitem{\code{replace(old, new[, count])}}{Replace 'old' with 'new' in string.}
+        \csitem{\code{split(sep[,maxsplit])}}{List of words, using 'sep' as delimiter string.}
+        \csitemhead{\textbf{printf-style formatting}}
+        \csitemhead{\code{"\%i \%i \%i" \% (42, 43, 44) --> "42 43 44"}}
+        \csitem{\code{'i'}}{Signed integer decimal.}
+        \csitem{\code{'x', 'X'}}{Signed hexadecimal (lowercase, uppercase).}
+        \csitem{\code{'e', 'f'}}{Float exponential, decimal.}
+        \csitem{\code{'r'}}{String (repr()).}
+        \csitem{\code{'s'}}{String (str()).}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{Generator}
+        \csitemhead{Creates iterator ('list') dynamically without using return.}
+        \csitem{\code{def f(i):}}{Generator function.}
+        \csitem{\code{{\space\space\space\space}for j in range(i):}}{}
+        \csitem{\code{{\space\space\space\space}{\space\space\space\space}yield j*2}}{Yield a value to iterator.}
+        \csitem{\code{for g in f(42):}}{Call Generator function.}
+        \csitem{\code{{\space\space\space\space}print(g)}}{Do something with values.}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: Built-in Functions (abs, bin, filter, hash, hex, isinstance, len, oct, open, print, range, reversed, sorted, type)
+    \begin{cschapter}{Built-in Functions}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{File handling}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{Decorator}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: import
+    \begin{cschapter}{Import}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: argparse
+    \begin{cschapter}{argparse}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{ctypes}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{random}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{math}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{re}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{datetime}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{os}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{sys}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{urllib}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{json}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{socket}
+        \csitem{}{}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{threading}
+        \csitem{}{}
+    \end{cschapter}
+
+
+    % License
+    \rule{0.3\linewidth}{0.25pt}
+    \scriptsize
+
+    Copyright \copyright\ 2013 Martin Wichmann
+
+    Licensed under a CC-BY-SA License
+
+\end{multicols}
+\end{document}
+
+
+
