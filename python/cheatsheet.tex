@@ -35,7 +35,7 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{cschapter}{Slicing / List / Tuple}
+    \begin{cschapter}{\href{http://docs.python.org/3/library/stdtypes.html}{Slicing / List / Tuple}}
         \csitemhead{\code{a = [0,1,2,3,4,5], b = "hello", c = (1,2,3)}}
         \csitem{\code{a[3] --> 3}}{Indexing.}
         \csitem{\code{a[-2] --> 4}}{Backwards indexing.}
@@ -54,7 +54,7 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{cschapter}{Dictionary}
+    \begin{cschapter}{\href{http://docs.python.org/3/library/stdtypes.html}{Dictionary}}
         \csitemhead{\code{a = \{"a": 42, 3: "y"\}}}
         \csitem{\code{a["a"] --> 42}}{}
         \csitem{\code{a[3] = "z"}}{}
@@ -66,7 +66,7 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{cschapter}{Control flow}
+    \begin{cschapter}{\href{http://docs.python.org/2/tutorial/controlflow.html}{Control flow}}
         \csitem{Conditional}{Loop (for)}
         \csitem{\code{if x < 0:}}{\code{for i in range(12):}}
         \csitem{\code{{\space\space\space\space}print("-")}}{\code{{\space\space\space\space}print(i)}}
@@ -114,7 +114,7 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{cschapter}{Codestyle (PEP8)}
+    \begin{cschapter}{\href{http://www.python.org/dev/peps/pep-0008/}{Codestyle (PEP8)}}
         \csitem{Indentation}{4 Spaces}
         \csitem{Maximum Line Length}{79 Characters}
         \csitem{Encoding}{UTF-8}
@@ -130,7 +130,7 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{cschapter}{String Methods}
+    \begin{cschapter}{\href{http://docs.python.org/3/library/stdtypes.html}{String Methods}}
         \csitem{\code{find(sub[,start[,end]])}}{Lowest index of substring 'sub' in slice s[start,end].}
         \csitem{\code{join(iterable)}}{Concatenate items in iterable with seperater 's'.}
         \csitem{\code{replace(old, new[, count])}}{Replace 'old' with 'new' in string.}
@@ -155,8 +155,7 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: Built-in Functions (abs, bin, filter, hash, hex, isinstance, len, oct, open, print, range, reversed, sorted, type)
-    \begin{cschapter}{Built-in Functions}
+    \begin{cschapter}{\href{http://docs.python.org/3/library/functions.html}{Built-in Functions}}
         \csitem{\code{abs(x)}}{Absolute value of integer.}
         \csitem{\code{bin(x)}}{Binary string of integer.}
         \csitem{\code{filter(f,lst)}}{Apply function 'f' to all in 'lst'.}
@@ -164,7 +163,6 @@
         \csitem{\code{hex(x)}}{Hex string for integer.}
         \csitem{\code{isinstance(o,cls)}}{True if 'o' is instance of 'cls' or sublcass.}
         \csitem{\code{len(s)}}{Length of object (string, tuple, list, dict).}
-        \csitem{\code{open(file,mode='r')}}{Returns opened file handler.}
         \csitem{\code{print(objects...)}}{Print objects to stdout.}
         \csitem{\code{range(stop)}}{Returns list of integers 0 to stop.}
         \csitem{\code{reversed(seq)}}{Returns reversed list.}
@@ -173,26 +171,66 @@
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
     \begin{cschapter}{File handling}
-        \csitem{}{}
+        \csitem{\code{fd = open(file, mode)}}{Open a file handler.}
+        \csitem{\code{fd.close()}}{Close a file handler.}
+        \csitemhead{\textbf{Modes}}
+        \csitem{r}{Reading (default).}
+        \csitem{w}{Writing, truncating the file first.}
+        \csitem{x}{Exclusive creation, failing if the file already exists.}
+        \csitem{a}{Appending to the end of the file.}
+        \csitem{rb}{Reading binary mode. Don't use for text files!}
+        \csitem{wb}{Writing binary mode. Don't use for text files!}
     \end{cschapter}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
-    \begin{cschapter}{Casting}
-        \csitem{}{}
-    \end{cschapter}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
-    \begin{cschapter}{Decorator}
-        \csitem{}{}
-    \end{cschapter}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: import
     \begin{cschapter}{Import}
+        \csitem{\code{import X}}{Import module X into namespace.}
+        \csitem{\code{from X import *}}{Import public content of module X into namespace. Avoid this!}
+        \csitem{\code{from X import a, b, c}}{Import objects from module X into namespace.}
+        \csitem{\code{X = \_\_import\_\_('X')}}{Equal to \code{import X}, but imports into variable.}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{\href{http://docs.python.org/3/library/math.html}{math}}
+        \csitem{\code{ceil(x)}}{Ceiling of x.}
+        \csitem{\code{fabs(x)}}{Absolute value of x.}
+        \csitem{\code{factorial(x)}}{X factorial.}
+        \csitem{\code{floor(x)}}{Floor value of x.}
+        \csitem{\code{exp(x)}}{Returns e**x.}
+        \csitem{\code{log(x[,base=e])}}{Logarithm of x.}
+        \csitem{\code{pow(x,y)}}{x raised to the power y.}
+        \csitem{\code{sqrt(x)}}{Square root of x.}
+        \csitem{\code{sin(x), cos(x), tan(x)}}{Sine, cosine, tagent of x.}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{\href{http://docs.python.org/3/library/sys.html}{sys}}
+        \csitem{\code{argv}}{List of command line arguments.}
+        \csitem{\code{exit([arg])}}{Exit from python using 'arg' as status.}
+        \csitem{\code{getsizeof(object)}}{Return size of object in bytes.}
+        \csitem{\code{path}}{Search path for modules.}
+        \csitem{\code{platform}}{Platform identifier.}
+        \csitemhead{\textbf{Platforms}}
+        \csitem{Linux}{'linux'}
+        \csitem{Windows}{'win32'}
+        \csitem{Mac OS X}{'darwin'}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{cschapter}{\href{http://docs.python.org/3/library/os.html}{os}}
+        \csitem{name}{Name of OS dependent module imported.}
+        \csitemhead{Names: 'posix', 'nt', 'mac', 'os2', 'ce', 'java'.}
+        \csitem{\code{getenv(key)}}{Get enviroment variable.}
+        \csitem{\code{listdir(path='.')}}{List of entries in the dir.}
+        \csitem{\code{curdir}}{Current dir constant ('.').}
+        \csitem{\code{pardir}}{Parent dir constant ('..').}
+        \csitem{\code{sep}}{Pathname seperator ('/').}
+    \end{cschapter}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: 
+    \begin{cschapter}{datetime}
         \csitem{}{}
     \end{cschapter}
 
@@ -216,31 +254,7 @@
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % TODO: 
-    \begin{cschapter}{math}
-        \csitem{}{}
-    \end{cschapter}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
     \begin{cschapter}{re}
-        \csitem{}{}
-    \end{cschapter}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
-    \begin{cschapter}{datetime}
-        \csitem{}{}
-    \end{cschapter}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
-    \begin{cschapter}{os}
-        \csitem{}{}
-    \end{cschapter}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % TODO: 
-    \begin{cschapter}{sys}
         \csitem{}{}
     \end{cschapter}
 
@@ -272,6 +286,8 @@
     % License
     \rule{0.3\linewidth}{0.25pt}
     \scriptsize
+
+    Written for and tested with Python 3.3.1
 
     Copyright \copyright\ 2013 Martin Wichmann
 
